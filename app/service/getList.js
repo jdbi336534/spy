@@ -200,11 +200,11 @@ class GetListService extends Service {
         arrInfo.update = $(item).find('div').text()
         break;
         case 5:
-        arrInfo.score = $(item).find('.span_block').eq(0).text()
+        arrInfo.score = $(item).find('.span_block').eq(0).text().replace(/\s+/g, '');
         break;
       }
     })
-    arrInfo.featurefilm = $('.juqing').find('.endtext').text();
+    arrInfo.featurefilm = $('.juqing').find('.endtext').text().replace(/\s+/g, '');
     let seed = $('.endpage .mox .o_list_cn_r .down-title a').attr('source-url');
     return {
       name,
